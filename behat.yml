@@ -1,0 +1,32 @@
+default:
+  suites:
+    default:
+      contexts:
+        - FeatureContext
+        - CustomFun
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+  extensions:
+    Drupal\MinkExtension:
+      goutte: ~
+      selenium2: ~
+      base_url: http://bdrupal.dd:8083
+    Drupal\DrupalExtension:
+      blackbox:
+      region_map:
+        header: ".layout-header"
+        footer: ".footer"
+      selectors:
+        message_selector: '.messages'
+        error_message_selector: '.messages__item'
+        success_message_selector: '.messages.messages--status'
+
+    Bex\Behat\ScreenshotExtension:
+      enabled: true
+      screenshot_taking_mode: all_scenarios
+      image_drivers:
+        local:
+          screenshot_directory: /Users/tarungoswami/PhpstormProjects/bdrupal/screen/
+#          clear_screenshot_directory: true

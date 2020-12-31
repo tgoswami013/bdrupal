@@ -1,0 +1,12 @@
+{
+  "require": {
+    "drupal/drupal-extension": "4.1.0",
+    "calcinai/php-imagick": "^0.1.2"
+  },
+  "config": {
+    "bin-dir": "bin/"
+  },
+  "require-dev": {
+    "bex/behat-screenshot": "^2.1"
+  }
+}
